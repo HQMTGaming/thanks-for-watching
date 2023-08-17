@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animated Thanks for Listening with Animated Color Background</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        #background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            animation: animateBackground 10s linear infinite alternate;
+        }
+        
+        @keyframes animateBackground {
+            0% {
+                background-color: #3498db;
+            }
+            100% {
+                background-color: #e74c3c;
+            }
+        }
+        
+        #container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+        
+        #text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 36px;
+            font-family: Arial, sans-serif;
+            color: white;
+            animation: fadeIn 2s ease-out forwards, moveText 4s linear infinite, animateColors 10s linear infinite alternate;
+        }
+        
+        #credit {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes moveText {
+            0%, 100% {
+                transform: translateX(-50%) translateY(-50%);
+            }
+            50% {
+                transform: translateX(-50%) translateY(-50%) translateY(-20px);
+            }
+        }
+        
+        @keyframes animateColors {
+            0% {
+                color: white;
+            }
+            100% {
+                color: #f39c12;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="background"></div>
+    <div id="container">
+        <div id="text">Thanks for Listening</div>
+        <div id="credit">Copyright by @ HQMT</div>
+    </div>
+    <script>
+        // You can add JavaScript code here if needed
+    </script>
+</body>
+</html>
